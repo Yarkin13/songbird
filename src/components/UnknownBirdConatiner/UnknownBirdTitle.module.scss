@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.birdTitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  color: #4d4c4c;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+}
+
+@media (max-width: 600px) {
+  .birdTitle {
+    justify-content: center;
+  }
+}

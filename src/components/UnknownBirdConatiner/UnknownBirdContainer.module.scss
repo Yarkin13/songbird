@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+
+.wrapperPlayer {
+  width: 80%;
+}
+
+.imgWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+@media(max-width: 1150px) {
+  .wrapperPlayer {
+    width: 75%;
+  }
+}
+
+@media(max-width: 920px) {
+  .wrapperPlayer {
+    width: 60%;
+  }
+}
+
+@media(max-width: 600px) {
+  .wrapperPlayer {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .wrapper {
+    display: block;
+    height: 320px;
+  }
+}
