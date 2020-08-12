@@ -11,12 +11,12 @@ import correctSound from './assets/audio/correct.mp3'
 import incorrectSound from './assets/audio/error.mp3'
 
 function App() {
-  let [isStart, setIsStart] = useState(false)
+  const [isStart, setIsStart] = useState(false)
   let [currentRound, setCurrentRound] = useState(0)
-  let [attempts, setAttempts] = useState(0)
+  const [attempts, setAttempts] = useState(0)
   const rnd = Math.round(0 + Math.random() * (5 - 0))
-  let [score, setScore] = useState(0)
-  let [currentBird, setCurrentBird] = useState({
+  const [score, setScore] = useState(0)
+  const [currentBird, setCurrentBird] = useState({
     id: birdsData[currentRound][rnd].id,
     name: birdsData[currentRound][rnd].name,
     species: birdsData[currentRound][rnd].species,
@@ -25,8 +25,7 @@ function App() {
     audio: birdsData[currentRound][rnd].audio,
     completed: false,
   })
-
-  let [completedGame, setCompletedGame] = useState(false)
+  const [completedGame, setCompletedGame] = useState(false)
   const [chosenBird, setChosenBird] = useState({})
   const nextRound = () => {
     setIsStart(false)
@@ -37,6 +36,7 @@ function App() {
     } else {
       setCurrentRound((currentRound += 1))
     }
+
     const rnd = Math.round(0 + Math.random() * (5 - 0))
     setCurrentBird({
       id: birdsData[currentRound][rnd].id,
@@ -64,14 +64,18 @@ function App() {
     )
     target.completed = true
     if (event.target.textContent === currentBird.name) {
+      if(!currentBird.completed) {
+        setScore(score + 5 + attempts)
+      }
+      console.log(currentBird)
       setChosenBird(target)
       setCurrentBird(target)
       event.target.querySelector('#indicator').classList.add(classes.correct)
-      setScore((score = score + 5 + attempts))
       getCorrectSound()
     } else {
       setChosenBird(target)
-      setAttempts((attempts -= 1))
+      setAttempts(attempts - 1)
+      event.target.classList.add(classes.noactive)
       if (!currentBird.completed) {
         getIncorrectSound()
         event.target
@@ -93,7 +97,6 @@ function App() {
       audio: birdsData[currentRound][rnd].audio,
       completed: false,
     })
-    console.log(currentRound)
     setCompletedGame(false)
   }
 
