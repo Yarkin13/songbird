@@ -26,3 +26,15 @@
   outline: none;
   cursor: pointer;
 }
+
+button:hover {
+  transition-duration: 1s;
+  box-shadow: 0 0 0 2px #D2973D inset, 0 0 0 4px white inset;
+}
+
+.indicator {
+  width: 15px;
+  height: 15px;
+  margin-right: 30px;
+  border-radius: 50%;
+}

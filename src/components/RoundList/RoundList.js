@@ -33,7 +33,7 @@ function RoundList(props) {
   return (
     <ul className={classes.wrapper}>
       {modes.map((bird) => {
-        return <RoundListItem title={bird.title} key={bird.id } id={bird.id} currentRound={props.currentRound}></RoundListItem>
+        return <RoundListItem title={bird.title} key={bird.id } id={bird.id}></RoundListItem>
       })}
     </ul>
   )

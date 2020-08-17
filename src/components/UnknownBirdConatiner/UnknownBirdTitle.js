@@ -1,19 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import classes from './UnknownBirdTitle.module.scss'
+import React from "react";
+import PropTypes from "prop-types";
+import classes from "./UnknownBirdTitle.module.scss";
 
 function UnknownBirdTitle(props) {
-  let title = '***'
-  if(props.completed) {
-    title = props.title
+  if (props.unknownBird.completed) {
+    return <div className={classes.birdTitle}>{props.unknownBird.name}</div>;
+  } else {
+    return <div className={classes.birdTitle}>***</div>;
   }
-  return <div className={classes.birdTitle}>{title}</div>
 }
 
 UnknownBirdTitle.propTypes = {
   title: PropTypes.string,
-  completed: PropTypes.bool
-}
+  completed: PropTypes.bool,
+};
 
-
-export default UnknownBirdTitle
+export default UnknownBirdTitle;

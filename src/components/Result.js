@@ -1,9 +1,17 @@
-import React from 'react'
-import classes from './Result.module.scss'
-import absoluteWin from '../assets/image/absolute-win.gif'
-import PropTypes from 'prop-types'
+import React from "react";
+import classes from "./Result.module.scss";
+import absoluteWin from "../assets/image/absolute-win.gif";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { removeRound, addUnknownBird, removeScore } from "../redux/actions";
 
 function Result(props) {
+  const startAgain = () => {
+    props.removeRound();
+    props.addUnknownBird(0);
+    props.removeScore();
+  };
+
   if (props.score === 30) {
     return (
       <div className={classes.wrapper}>
@@ -11,12 +19,14 @@ function Result(props) {
         <h3>
           Вы прошли викторину и заработали {props.score} из 30 возможных балов
         </h3>
-        <div className={classes.absoluteWin}><img src={absoluteWin} alt={absoluteWin}></img></div>
-        <button className={classes.btn} onClick={props.startAgain}>
+        <div className={classes.absoluteWin}>
+          <img src={absoluteWin} alt={absoluteWin}></img>
+        </div>
+        <button className={classes.btn} onClick={startAgain}>
           Попробывать еще раз
         </button>
       </div>
-    )
+    );
   } else {
     return (
       <div className={classes.wrapper}>
@@ -24,17 +34,30 @@ function Result(props) {
         <h3>
           Вы прошли викторину и заработали {props.score} из 30 возможных балов
         </h3>
-        <button className={classes.btn} onClick={props.startAgain}>
+        <button className={classes.btn} onClick={startAgain}>
           Попробывать еще раз
         </button>
       </div>
-    )
+    );
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    round: state.round.round,
+    score: state.score.score,
+  };
+};
+
+const mapDispatchToProps = {
+  removeRound,
+  addUnknownBird,
+  removeScore,
+};
+
 Result.propTypes = {
   score: PropTypes.number,
-  startAgain: PropTypes.func
-}
+  startAgain: PropTypes.func,
+};
 
-export default Result
+export default connect(mapStateToProps, mapDispatchToProps)(Result);

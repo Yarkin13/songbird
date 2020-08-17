@@ -8,7 +8,7 @@ function Header(props) {
   return (
     <header className={classes.wrapper}>
       <Logo></Logo>
-      <Score score={props.score}></Score>
+      <Score></Score>
     </header>
   )
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import classes from './BirdPlayer.module.scss'
 
 function UnknownBirdPlayer(props) {
-  return <ReactAudioPlayer src={props.audioSrc} controls  className={classes.player}/>
+  return <ReactAudioPlayer src={props.bird.audio} controls  className={classes.player}/>
 }
 
 UnknownBirdPlayer.propTypes = {
