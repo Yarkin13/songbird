@@ -1,39 +1,47 @@
-import React, { useState } from "react";
-import classes from "./App.module.scss";
-import Header from "./components/Header/Header";
-import RoundList from "./components/RoundList/RoundList";
-import UnknownBirdContainer from "./components/UnknownBirdConatiner/UnknownBirdContainer";
-import MainContainer from "./components/MainContainer/MainContainer";
-import Button from "./components/Button";
-import Result from "./components/Result";
-import { connect } from "react-redux";
+import React from 'react'
+import { connect } from 'react-redux'
+import Quiz from './components/Quiz'
+import Statistic from './components/Statistic'
+import Library from './components/Library/Library'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import NavBar from './components/NavBar'
+import classes from './App.module.scss'
+import { hideMenu } from './redux/actions'
 
 function App(props) {
-  if (props.round === 6) {
-    return (
-      <div className={classes.wrapper}>
-        <Header />
-        <RoundList />
-        <Result />
-      </div>
-    );
-  } else {
-    return (
-      <div className={classes.wrapper}>
-        <Header />
-        <RoundList />
-        <UnknownBirdContainer />
-        <MainContainer />
-        <Button />
-      </div>
-    );
+  const hideMenuHandler = () => {
+    if (props.showMenuFlag) {
+      props.hideMenu()
+    }
   }
+  return (
+    <BrowserRouter>
+      <div className={classes.wrapper} onClick={hideMenuHandler}>
+        <NavBar></NavBar>
+        <Switch>
+          <Route exact path="/">
+            <Quiz></Quiz>
+          </Route>
+          <Route exact path="/statistic">
+            <Statistic></Statistic>
+          </Route>
+          <Route exact path="/library">
+            <Library></Library>
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
+  )
 }
 
 const mapStateToProps = (state) => {
   return {
-    round: state.round.round,
-  };
-};
+    showMenuFlag: state.showMenu.showMenuFlag,
+  }
+}
 
-export default connect(mapStateToProps, null)(App);
+const mapDispatchToProps = {
+  hideMenu,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

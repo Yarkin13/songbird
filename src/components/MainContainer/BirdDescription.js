@@ -2,7 +2,6 @@ import React from 'react'
 import classes from './BirdDescription.module.scss'
 import BirdImg from '../BirdImg'
 import BirdPlayer from '../BirdPlayer'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 function BirdsDescription(props) {
@@ -33,15 +32,10 @@ function BirdsDescription(props) {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    chosenBird: state.chosenBird.chosenBird
+    chosenBird: state.chosenBird.chosenBird,
   }
-} 
-
-BirdsDescription.propTypes = {
-  isStart: PropTypes.bool,
-  chosenBird: PropTypes.object,
 }
 
 export default connect(mapStateToProps, null)(BirdsDescription)

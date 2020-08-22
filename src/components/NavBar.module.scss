@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.list {
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  color: #4d4c4c;
+  font-size: 30px;
+  list-style: none;
+  position: absolute;
+  transition-duration: 1s;
+}
+
+
+.hide {
+  left: -500px;
+}
+
+.show {
+  left:  0px;
+}
+
+a {
+  color: #4d4c4c;
+  text-decoration: none;
+}
+
+.menu {
+  width: 30px;
+  height: 24px;
+  border-radius: 0;
+  cursor: pointer;
+  margin: 20px 0px 0 10px;
+
+}

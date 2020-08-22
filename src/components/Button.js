@@ -1,19 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classes from "./Button.module.scss";
-import { connect } from "react-redux";
-import { incrementRound, addUnknownBird, choseBird } from "../redux/actions";
+import React from 'react'
+import classes from './Button.module.scss'
+import { connect } from 'react-redux'
+import {
+  incrementRound,
+  addUnknownBird,
+  choseBird,
+  removeAnswers,
+} from '../redux/actions'
 
 function Button(props) {
   const nextRound = () => {
-    props.incrementRound();
+    props.incrementRound()
     props.choseBird({})
-    if (props.round < 5) props.addUnknownBird(props.round + 1);
-    document.querySelectorAll("#indicator").forEach((el) => {
-      el.className = classes.indicator;
-      el.className = classes.indicator;
-    });
-  };
+    if (props.round < 5) props.addUnknownBird(props.round + 1)
+    props.removeAnswers()
+  }
 
   if (props.unknownBird.completed) {
     return (
@@ -22,32 +23,28 @@ function Button(props) {
           Следующий вопрос
         </button>
       </div>
-    );
+    )
   } else {
     return (
       <div className={classes.wrapper}>
         <button className={classes.hide}>Следующий вопрос</button>
       </div>
-    );
+    )
   }
 }
-
-Button.propTypes = {
-  currentBird: PropTypes.object,
-  nextRound: PropTypes.func,
-};
 
 const mapStateToProps = (state) => {
   return {
     unknownBird: state.unknownBird.unknownBird,
     round: state.round.round,
-  };
-};
+  }
+}
 
 const mapDispatchToProps = {
   incrementRound,
   addUnknownBird,
   choseBird,
-};
+  removeAnswers,
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Button);
+export default connect(mapStateToProps, mapDispatchToProps)(Button)

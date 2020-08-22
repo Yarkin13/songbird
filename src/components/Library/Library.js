@@ -1,13 +1,8 @@
 import React from 'react'
-import RoundListItem from './RoundListItem'
-import classes from './RoundList.module.scss'
+import KindBird from './KindBird'
 
-function RoundList(props) {
+function Library() {
   const modes = [
-    {
-      id: 0,
-      title: 'Разминка',
-    },
     {
       id: 1,
       title: 'Воробьиные',
@@ -30,17 +25,14 @@ function RoundList(props) {
     },
   ]
   return (
-    <ul className={classes.wrapper}>
+    <ul>
       {modes.map((bird) => {
         return (
-          <RoundListItem
-            title={bird.title}
-            key={bird.id}
-            id={bird.id}></RoundListItem>
+          <KindBird title={bird.title} key={bird.id} id={bird.id}></KindBird>
         )
       })}
     </ul>
   )
 }
 
-export default RoundList
+export default Library

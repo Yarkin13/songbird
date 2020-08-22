@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classes from './Header.module.scss'
 import Logo from './Logo'
 import Score from './Score'
@@ -11,10 +10,6 @@ function Header(props) {
       <Score></Score>
     </header>
   )
-}
-
-Header.propTypes = {
-  score: PropTypes.number
 }
 
 export default Header

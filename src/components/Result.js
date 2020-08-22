@@ -1,16 +1,15 @@
-import React from "react";
-import classes from "./Result.module.scss";
-import absoluteWin from "../assets/image/absolute-win.gif";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { removeRound, addUnknownBird, removeScore } from "../redux/actions";
+import React from 'react'
+import classes from './Result.module.scss'
+import absoluteWin from '../assets/image/absolute-win.gif'
+import { connect } from 'react-redux'
+import { removeRound, addUnknownBird, removeScore } from '../redux/actions'
 
 function Result(props) {
   const startAgain = () => {
-    props.removeRound();
-    props.addUnknownBird(0);
-    props.removeScore();
-  };
+    props.removeRound()
+    props.addUnknownBird(0)
+    props.removeScore()
+  }
 
   if (props.score === 30) {
     return (
@@ -26,7 +25,7 @@ function Result(props) {
           Попробывать еще раз
         </button>
       </div>
-    );
+    )
   } else {
     return (
       <div className={classes.wrapper}>
@@ -38,7 +37,7 @@ function Result(props) {
           Попробывать еще раз
         </button>
       </div>
-    );
+    )
   }
 }
 
@@ -46,18 +45,13 @@ const mapStateToProps = (state) => {
   return {
     round: state.round.round,
     score: state.score.score,
-  };
-};
+  }
+}
 
 const mapDispatchToProps = {
   removeRound,
   addUnknownBird,
   removeScore,
-};
+}
 
-Result.propTypes = {
-  score: PropTypes.number,
-  startAgain: PropTypes.func,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Result);
+export default connect(mapStateToProps, mapDispatchToProps)(Result)
