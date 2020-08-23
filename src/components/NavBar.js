@@ -26,17 +26,17 @@ function NavBar(props) {
         <ul className={classnames(classes.list, classes.show)}>
           <li>
             <Link onClick={changeMenuState} to="/">
-              викторина
-            </Link>
-          </li>
-          <li>
-            <Link onClick={changeMenuState} to="/statistic">
-              статистика
+              <p className={classes.item}>Викторина</p>
             </Link>
           </li>
           <li>
             <Link onClick={changeMenuState} to="/library">
-              библиотека
+              <p className={classes.item}>Библиотека</p>
+            </Link>
+          </li>
+          <li>
+            <Link onClick={changeMenuState} to="/statistic">
+              <p className={classes.item}>Статистика</p>
             </Link>
           </li>
         </ul>
@@ -53,17 +53,17 @@ function NavBar(props) {
         <ul className={classnames(classes.list, classes.hide)}>
           <li>
             <Link onClick={changeMenuState} to="/">
-              викторина
-            </Link>
-          </li>
-          <li>
-            <Link onClick={changeMenuState} to="/statistic">
-              статистика
+              <p className={classes.item}>Викторина</p>
             </Link>
           </li>
           <li>
             <Link onClick={changeMenuState} to="/library">
-              библиотека
+              <p className={classes.item}>Библиотека</p>
+            </Link>
+          </li>
+          <li>
+            <Link onClick={changeMenuState} to="/statistic">
+              <p className={classes.item}>Статистика</p>
             </Link>
           </li>
         </ul>

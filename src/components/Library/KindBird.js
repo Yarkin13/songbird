@@ -21,7 +21,7 @@ function KindBird(props) {
           {props.id}.{' ' + props.title}
         </p>
         <ul className={classes.show}>
-          {birdsData[props.id].map((bird) => {
+          {birdsData[props.id].map((bird, index) => {
             return (
               <BirdInfo
                 title={bird.name}
@@ -29,7 +29,8 @@ function KindBird(props) {
                 audio={bird.audio}
                 species={bird.species}
                 description={bird.description}
-                show={true}></BirdInfo>
+                show={true}
+                key={index}></BirdInfo>
             )
           })}
         </ul>
@@ -42,7 +43,7 @@ function KindBird(props) {
           {props.id}.{' ' + props.title}
         </p>
         <ul className={classes.show}>
-          {birdsData[props.id].map((bird) => {
+          {birdsData[props.id].map((bird, index) => {
             return (
               <BirdInfo
                 title={bird.name}
@@ -50,7 +51,8 @@ function KindBird(props) {
                 audio={bird.audio}
                 species={bird.species}
                 description={bird.description}
-                show={false}></BirdInfo>
+                show={false}
+                key={index}></BirdInfo>
             )
           })}
         </ul>

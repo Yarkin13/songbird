@@ -4,7 +4,6 @@ import classes from './BirdInfo.module.scss'
 import classnames from 'classnames'
 
 function BirdInfo(props) {
-  console.log(props)
   if (props.show) {
     return (
       <li className={classnames(classes.item, classes.show)}>

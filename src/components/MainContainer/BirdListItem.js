@@ -17,6 +17,7 @@ import incorrectSound from '../../assets/audio/error.mp3'
 import classNames from 'classnames'
 
 function BirdListItem(props) {
+  console.log(props.unknownBird.name)
   const checkBird = (event) => {
     props.choseBird({
       ...birdsData[props.currentRound].find(
@@ -77,6 +78,8 @@ function BirdListItem(props) {
           <span className={classes.indicator}></span>
         </li>
       )
+    default:
+      return
   }
 }
 

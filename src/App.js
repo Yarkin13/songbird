@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Quiz from './components/Quiz'
-import Statistic from './components/Statistic'
+import Statistic from './components/Statistic/Statistic'
 import Library from './components/Library/Library'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
