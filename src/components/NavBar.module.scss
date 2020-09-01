@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Pacifico&display=swap');
+
+.list {
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  color: #4d4c4c;
+  font-size: 30px;
+  list-style: none;
+  position: fixed;
+  transition-duration: 1s;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#f5c35f, wheat);
+  opacity: 0.9;
+  width: 15%;
+  min-height: 100vh;
+  z-index: 100;
+  border-radius: 10px;
+}
+
+
+.item {
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.hide {
+  left: -1000px;
+}
+
+.show {
+  left:  0px;
+}
+
+a {
+  padding-top: 100px;
+  text-decoration: none;
+  font-family: 'Caveat', cursive;
+   font-size: 40px;
+   color: #f59847;
+}
+
+.menu {
+  z-index: 10000;
+  position: relative;
+  width: 30px;
+  height: 24px;
+  border-radius: 0;
+  cursor: pointer;
+  margin: 20px 0px 0 10px;
+
+}
+
+@media(max-width:1300px) {
+  .list {
+    width: 25%;
+  }
+}
+
+@media(max-width:1000px) {
+  .list {
+    width: 40%;
+  }
+}
+
+@media(max-width:700px) {
+  .list {
+    width: 50%;
+  }
+}
+
+@media(max-width:450px) {
+  .list {
+    width: 100%;
+  }
+}

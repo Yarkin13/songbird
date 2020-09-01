@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3c2e75aa.chunk.css",
+    "main.js": "/static/js/main.6e7d4c5b.chunk.js",
+    "main.js.map": "/static/js/main.6e7d4c5b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3ffde9c1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3ffde9c1.js.map",
+    "static/js/2.6a829ea7.chunk.js": "/static/js/2.6a829ea7.chunk.js",
+    "static/js/2.6a829ea7.chunk.js.map": "/static/js/2.6a829ea7.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ffd81238e72e95699057f3e5fd211a52.js": "/precache-manifest.ffd81238e72e95699057f3e5fd211a52.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.3c2e75aa.chunk.css.map": "/static/css/main.3c2e75aa.chunk.css.map",
+    "static/js/2.6a829ea7.chunk.js.LICENSE.txt": "/static/js/2.6a829ea7.chunk.js.LICENSE.txt",
+    "static/media/absolute-win.gif": "/static/media/absolute-win.4967a7a8.gif",
+    "static/media/correct.mp3": "/static/media/correct.8e3d6124.mp3",
+    "static/media/error.mp3": "/static/media/error.32fc22b2.mp3",
+    "static/media/unknownBird.jpg": "/static/media/unknownBird.02f0c0fb.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3ffde9c1.js",
+    "static/js/2.6a829ea7.chunk.js",
+    "static/css/main.3c2e75aa.chunk.css",
+    "static/js/main.6e7d4c5b.chunk.js"
+  ]
+}

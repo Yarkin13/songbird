@@ -1,0 +1,39 @@
+.item {
+  list-style: none;
+  flex-wrap: wrap;
+  background-color: #ffebcd;
+  margin: 15px;
+  border-radius: 10px;
+  padding: 15px;
+  transition-duration: 2s;
+}
+
+.mainWrapper {
+  display: flex;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 16px;
+
+}
+
+.player {
+  width: 100%;
+  outline: none;
+}
+
+.show {
+  display: block;
+}
+
+.hide{
+  display: none;
+}
+
+@media(max-width:700px) {
+  .mainWrapper {
+
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

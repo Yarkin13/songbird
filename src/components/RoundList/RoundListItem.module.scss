@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.item {
+  font-family: 'Lato', sans-serif;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex: auto;
+  justify-content: center;
+  height: 40px;
+}
+
+.active {
+  background-color: sandybrown;
+}

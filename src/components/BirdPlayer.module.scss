@@ -1,0 +1,12 @@
+.player {
+  width: calc(100% - 20px);
+  outline: none;
+  margin: 15px 10px;
+  color: red;
+}
+
+@media(max-width:600px) {
+  .player {
+    margin: 15px 10px;
+  }
+}

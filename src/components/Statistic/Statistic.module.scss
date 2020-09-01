@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+h3 {
+  font-family: 'Caveat', cursive;
+   font-size: 40px;
+   color: sandybrown;
+}
+
+h1 {
+  font-family: 'Caveat', cursive;
+  color: sandybrown;
+}
+
+.item {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f2d18f;
+  border-radius: 10px;
+  margin: 15px;
+  font-family: 'Lato', sans-serif;
+}
+
+.title {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+}
